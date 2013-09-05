@@ -1,0 +1,186 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: #fff;
+  background: image-url('satinweave.png');
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+a {
+  font-weight: bold;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;
+}
+
+.top-bar-home {
+  background: #fff;
+  img {
+    margin-top: 8px;
+  }
+}
+
+.name {
+  h4 {
+    padding-top: 6px;
+    a {
+      -webkit-transition: opacity 0.2s ease-in-out;
+      -moz-transition: opacity 0.2s ease-in-out;
+      -o-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out;
+      color: lighten(#486175, 20%);
+      img {
+        margin-top: 3px;
+      }
+      &:hover {
+        color: #486175;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.top-bar-section {
+  li {
+
+    &:hover {
+      a {
+        -webkit-transition: background-color 0.2s ease-in-out;
+        -moz-transition: background-color 0.2s ease-in-out;
+        -o-transition: background-color 0.2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
+        color: #fff;
+        background-color: darken($primary-color, 2%) !important;
+      }
+    }
+    &.active {
+      a {
+        color: #fff;
+        background: darken($primary-color, 2%) !important;
+      }
+    }
+  }
+}
+
+.the-container {
+  padding-bottom: 20px;
+  background: #f5a243;
+  min-height: 80%;
+  .home-info {
+    padding-top: 30px;
+  }
+  .pagination {
+    a {
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-inout;
+    }
+  }
+  form {
+    .field {
+      label {
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+    .submit-button {
+      padding-top: 40px;
+    }
+  }
+}
+
+.the-container2 {
+  margin-top: -60px;
+  padding-bottom: 20px;
+  background: #fff;
+  min-height: 80%;
+}
+
+.top-banner {
+  background: #F5A243;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  h1 {
+    color: #fff;
+  }
+  p {
+    color: #cdc9ca;
+  }
+}
+
+.action-button {
+  @include button-base;
+  @include button-size;
+  @include button-style($secondary-color, 3px, false);
+}
+
+footer {
+  padding-top: 20px;
+  background: #486175;
+  height: auto;
+  border-top: 2px solid #6385a1;
+  opacity: 0.6;
+  p {
+    font-size: 12px;
+    &.mission {
+      color: lighten(#f4f2ed, 5%);
+    }
+    &.copyright {
+      color: darken(#f4f2ed, 5%);
+    }
+  }
+  li {
+    a {
+      .icon-twitter-sign {
+        color: $twitter;
+        -webkit-transition: color 0.2s ease-in-out;
+        -moz-transition: color 0.2s ease-in-out;
+        -o-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-inout;
+        &:hover {
+          color: darken($twitter, 10%);
+        }
+      }
+      .icon-google-plus-sign {
+        color: $google-plus;
+        -webkit-transition: color 0.2s ease-in-out;
+        -moz-transition: color 0.2s ease-in-out;
+        -o-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-inout;
+        &:hover {
+          color: darken($google-plus, 10%);
+        }
+      }
+      .icon-github-sign {
+        color: $github;
+        -webkit-transition: color 0.2s ease-in-out;
+        -moz-transition: color 0.2s ease-in-out;
+        -o-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-inout;
+        &:hover {
+          color: darken($github, 10%);
+        }
+      }
+      .icon-linkedin-sign {
+        color: $linkedin;
+        -webkit-transition: color 0.2s ease-in-out;
+        -moz-transition: color 0.2s ease-in-out;
+        -o-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-inout;
+        &:hover {
+          color: darken($linkedin, 10%);
+        }
+      }
+    }
+  }
+
+}

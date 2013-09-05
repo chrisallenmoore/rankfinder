@@ -1,0 +1,56 @@
+<% content_for :title, 'RankFinder App by ClearTheNoise | List your ranks' %>
+<%= render 'layouts/topbar' %>
+
+<div class="the-container">
+
+  <div class="row">
+    <div class="large-12 columns">
+
+      <h3 style="padding-top: 45px;">List of all ranks</h3>
+
+      <table>
+        <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>Domain / Url</th>
+          <th>GPR</th>
+          <th>Alexa US Rank</th>
+          <th>Alexa Global Rank</th>
+          <th>Google</th>
+          <th>Yahoo!</th>
+          <th>Bing</th>
+          <th>Date Pulled</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @ranks.each do |rank| %>
+            <tr>
+              <td><%= rank.keyword %></td>
+              <td><%= rank.url %></td>
+              <td><%= rank.google_page_rank %></td>
+              <td><%= rank.alexa_us_rank %></td>
+              <td><%= rank.alexa_global_rank %></td>
+              <td><%= rank.google_rank %></td>
+              <td><%= rank.yahoo_rank %></td>
+              <td><%= rank.bing_rank %></td>
+              <td><%= time_ago_in_words(rank.created_at) + ' ago' %></td>
+              <td><%= link_to raw("<i class='icon-eye-open'></i>"), rank, title: 'show' %></td>
+              <td><%= link_to raw("<i class='icon-edit'></i>"), edit_rank_path(rank), title: 'edit' %></td>
+              <td><%= link_to raw("<i class='icon-remove-circle'></i>"), rank, method: :delete, data: {confirm: 'Are you sure?'}, title: 'delete' %></td>
+            </tr>
+
+        <% end %>
+        </tbody>
+      </table>
+      <%= foundation_paginate(@ranks) %>
+
+      <br/>
+
+      <%= link_to raw("<i class='icon-plus-sign'></i>"), new_rank_path, title: 'make a new search', class: "right" %>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,6 @@
+<%= form_tag ranks_path, method: 'get' do %>
+    <p>
+      <%= text_tield_tag :search, params[:search] %>
+      <%= submit_tag "Search", name: nil %>
+    </p>
+<% end %>

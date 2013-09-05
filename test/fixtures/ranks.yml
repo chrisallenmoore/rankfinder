@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  url: MyString
+  keyword: MyString
+  google_page_rank: MyString
+  alexa_us_rank: MyString
+  alexa_global_rank: MyString
+  google_rank: MyString
+  yahoo_rank: MyString
+  bing_rank: MyString
+
+two:
+  url: MyString
+  keyword: MyString
+  google_page_rank: MyString
+  alexa_us_rank: MyString
+  alexa_global_rank: MyString
+  google_rank: MyString
+  yahoo_rank: MyString
+  bing_rank: MyString

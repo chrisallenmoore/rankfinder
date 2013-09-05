@@ -1,0 +1,48 @@
+<div class="contain-to-grid">
+  <nav class="top-bar" data-options="is_hover:false">
+
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h4><%= link_to(image_tag('RankFinder-logo-sm.png', class: 'RankFinder logo'), root_path, class: 'brand') %></h4>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="right">
+        <% if current_page?(controller: 'home', action: 'index') %>
+            <li class='active'>
+              <%= link_to('Home', root_path) %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to('Home', root_path) %>
+            </li>
+        <% end %>
+        <% if current_page?(controller: 'ranks', action: 'new') %>
+            <li class='active'>
+              <%= link_to('Find ranks now!', new_rank_path) %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to('Find ranks now!', new_rank_path) %>
+            </li>
+        <% end %>
+
+        <% if current_page?(controller: 'ranks', action: 'index') %>
+            <li class='active'>
+              <%= link_to('List of ranks', ranks_path) %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to('List of ranks', ranks_path) %>
+            </li>
+        <% end %>
+      </ul>
+
+    </section>
+  </nav>
+</div>

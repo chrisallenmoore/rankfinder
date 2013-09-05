@@ -1,0 +1,27 @@
+// Place all the styles related to the ranks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.se-ranks {
+  padding-top: 40px;
+  color: $primary-color;
+  font-size: 16px;
+  padding-right: 20px;
+  padding-left: 20px;
+  line-height: 20px;
+  strong {
+    font-size: 20px;
+  }
+  .rank {
+    border-radius: 5px;
+    background-color: #696969;
+    color: #fff;
+    line-height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 3px #333;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+}

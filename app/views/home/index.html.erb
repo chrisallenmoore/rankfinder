@@ -1,0 +1,41 @@
+<% content_for :title, 'RankFinder App by ClearTheNoise | Find out how your site ranks for Google, Yahoo, and Bing' %>
+<%= render 'home/topbar' %>
+
+<div class="the-container">
+
+  <div class="top-banner text-center">
+    <div class="row">
+      <div class="large-12 columns">
+
+        <h1>Google, Yahoo, and Bing ranks for any site </h1>
+
+        <h4 class="subheader">Get search engine ranks for your website - with only a url and keyword</h4>
+
+        <%= link_to('Find Your Ranks!', new_rank_path, class: 'medium button action-button') %>
+      </div>
+    </div>
+  </div>
+
+  <section class="home-info">
+    <div class="row">
+
+      <div class="large-4 columns text-center">
+
+        <%= image_tag('sgt-1st-class.png', alt: 'RankFinder Sgt First Class') %>
+
+      </div>
+
+      <div class="large-8 columns">
+        <h2>How RankFinder can help</h2>
+
+        <p>You've been looking all over for a solution to find your site's page ranks. Look no
+          further. <%= link_to('RankFinder', new_rank_path) %> can't actually force Google, Yahoo and Bing to rank you in
+          the top 10 for your keywords, but it will show you where you rank if you're domain / url and keyword combination is in the top 100 on any of these search engines.</p>
+
+        <p>Oh, and it's free. :)</p>
+      </div>
+
+    </div>
+  </section>
+
+</div>

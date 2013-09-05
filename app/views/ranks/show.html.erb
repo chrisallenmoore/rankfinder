@@ -1,0 +1,58 @@
+<% content_for :title, 'RankFinder App by ClearTheNoise | Your Ranks!' %>
+<%= render 'layouts/topbar' %>
+
+<div class="the-container">
+
+  <div class="top-banner">
+    <div class="row">
+      <div class="large-12 columns">
+
+        <h1>Rank Results:</h1>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 large-centered columns">
+
+      <p id="notice"><%= notice %></p>
+
+      <div class=" the-container2">
+        <div class="row se-ranks">
+
+          <div class="large-3 columns text-center">Keyword: <strong><%= @rank.keyword %></strong></div>
+          <div class="large-4 columns large-offset-1 text-center">Domain: <strong><%= @rank.url %></strong></div>
+          <div class="large-3 columns large-offset-1 text-center">Google Page Rank:
+            <strong>
+              <% page_ranks = PageRankr.ranks('http://www.' + @rank.url) %><%= page_ranks[:google] %></strong>
+          </div>
+
+        </div>
+
+        <div class="row se-ranks">
+
+          <div class="large-3 columns">
+            <div class="rank">Google Rank:<br><%= @rank.google_rank %></div>
+          </div>
+          <div class="large-4 large-offset-1 columns">
+            <div class="rank">Yahoo Rank:<br><%= @rank.yahoo_rank %></div>
+          </div>
+          <div class="large-3 large-offset-1 columns">
+            <div class="rank">Bing Rank:<br><%= @rank.bing_rank %></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="large-12 columns text-right">
+        <br><br>
+        <%= link_to raw("<i class='icon-edit'></i>"), edit_rank_path(@rank), title: 'edit this search' %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
