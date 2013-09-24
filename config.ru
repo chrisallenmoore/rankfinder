@@ -2,3 +2,8 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
+
+# added for ruby-prof testing gem
+if Rails.env.profile?
+  use Rack::RubyProf, :path => '/temp/profile'
+end

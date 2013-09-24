@@ -51,21 +51,19 @@ class RanksController < ApplicationController
     url = strip_url(the_url)
 
     # Define the search engines array
-    #search_engines = [ :google, :yahoo, :bing ]   #orig
-
     search_engines = { google: 'google_rank', yahoo: 'yahoo_rank', bing: 'bing_rank'}
-
+    # Get search engine ranks for the supplied keyword and url combination
     search_engines.each do |key, value|
       @se = Rankstar.rank(key, keyword, url, :res_per_page => 10, :limit => 100)
 
-      case value
-        when 'google_rank'
+      case key
+        when :google
           if @se.nil?
             @rank.google_rank = '-'
           else
             @rank.google_rank = @se
           end
-        when 'yahoo_rank'
+        when :yahoo
           if @se.nil?
             @rank.yahoo_rank = '-'
           else
@@ -81,9 +79,10 @@ class RanksController < ApplicationController
 
     end
 
-    # Get Google rank for the supplied keyword and url combination
 =begin
-    @google_rank = Rankstar.rank(search_engines[0], keyword, url, :res_per_page => 10, :limit => 100)
+    # Get search engine ranks for the supplied keyword and url combination
+    # Get Google rank for the supplied keyword and url combination
+    @google_rank = Rankstar.rank(:google, keyword, url, :res_per_page => 10, :limit => 100)
     if @google_rank.nil?
       @rank.google_rank = '-'
     else
@@ -91,7 +90,7 @@ class RanksController < ApplicationController
     end
 
     # Get Yahoo rank for the supplied keyword and url combination
-    @yahoo_rank = Rankstar.rank(search_engines[1], keyword, url, :res_per_page => 10, :limit => 100)
+    @yahoo_rank = Rankstar.rank(:yahoo, keyword, url, :res_per_page => 10, :limit => 100)
     if @yahoo_rank.nil?
       @rank.yahoo_rank = '-'
     else
@@ -99,7 +98,7 @@ class RanksController < ApplicationController
     end
 
     # Get Bing rank for the supplied keyword and url combination
-    @bing_rank = Rankstar.rank(search_engines[2], keyword, url, :res_per_page => 10, :limit => 100)
+    @bing_rank = Rankstar.rank(:bing, keyword, url, :res_per_page => 10, :limit => 100)
     if @bing_rank.nil?
       @rank.bing_rank = '-'
     else

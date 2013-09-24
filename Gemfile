@@ -15,7 +15,7 @@ end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-gem "compass-rails", "~> 2.0.alpha.0"  # required for Rails 4
+gem "compass-rails", "~> 2.0.alpha.0"  # required for Rails 4 and Foundation
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -53,6 +53,7 @@ gem 'PageRankr', '~> 3.1.0', :require => 'page_rankr'
 
 group :development do
   gem "better_errors"
+  gem "ruby-prof"
 end
 
 gem 'will_paginate', '~> 3.0'
