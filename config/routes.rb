@@ -1,6 +1,6 @@
 Rankfinder::Application.routes.draw do
 
-  resources :ranks, only: [:index, :new, :create, :destroy]#, :path => "rankfinder"
+  resources :ranks, only: [:index, :show, :new, :create, :destroy]#, :path => "rankfinder"
   #get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
