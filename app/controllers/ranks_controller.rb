@@ -79,32 +79,6 @@ class RanksController < ApplicationController
 
     end
 
-=begin
-    # Get search engine ranks for the supplied keyword and url combination
-    # Get Google rank for the supplied keyword and url combination
-    @google_rank = Rankstar.rank(:google, keyword, url, :res_per_page => 10, :limit => 100)
-    if @google_rank.nil?
-      @rank.google_rank = '-'
-    else
-      @rank.google_rank = @google_rank
-    end
-
-    # Get Yahoo rank for the supplied keyword and url combination
-    @yahoo_rank = Rankstar.rank(:yahoo, keyword, url, :res_per_page => 10, :limit => 100)
-    if @yahoo_rank.nil?
-      @rank.yahoo_rank = '-'
-    else
-      @rank.yahoo_rank = @yahoo_rank
-    end
-
-    # Get Bing rank for the supplied keyword and url combination
-    @bing_rank = Rankstar.rank(:bing, keyword, url, :res_per_page => 10, :limit => 100)
-    if @bing_rank.nil?
-      @rank.bing_rank = '-'
-    else
-      @rank.bing_rank = @bing_rank
-    end
-=end
     # Get Google Page Rank, Alexa US rank, and Alexa Global rank for the supplied domain
     page_ranks = PageRankr.ranks('http://www.' + @rank.url)
     if page_ranks[:google].nil?
